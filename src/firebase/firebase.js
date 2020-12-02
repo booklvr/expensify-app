@@ -1,21 +1,21 @@
 import * as firebase from "firebase";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyAvDvG3C4LprYfmoNERcNwWqziIe-QZ1oQ",
-  authDomain: "expensify-91809.firebaseapp.com",
-  databaseURL: "https://expensify-91809.firebaseio.com",
-  projectId: "expensify-91809",
-  storageBucket: "expensify-91809.appspot.com",
-  messagingSenderId: "724935341967",
-  appId: "1:724935341967:web:4bfd22ab05d3221e633dfa",
-  measurementId: "G-R3M5N6GQ72",
+  apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-export {firebase, database as default };
+export { firebase, database as default };
 
 // // child_removed
 // database.ref("expenses").on("child_removed", (snapshot) => {
